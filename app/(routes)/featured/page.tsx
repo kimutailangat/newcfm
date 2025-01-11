@@ -1,20 +1,22 @@
-import Container from "@/components/ui/container";
-import { getFeaturedProducts } from "@/lib/apiCalls";
-import filteredData from "@/app/utils/filteredData";
-import { Product } from "@/types";
-import ProductCard from "@/components/ui/product-card";
+import { Metadata } from 'next';
+import { getFeaturedProducts } from '@/lib/apiCalls';
+import { Container } from '@/components/ui/container';
+import { ProductCard } from '@/components/product-card';
+import { filteredData } from '@/lib/utils';
 
-export const metadata = {
-  title: "Featured | continental-market",
+export const metadata: Metadata = {
+  title: "Featured | Continental Free Market",
   description: `Featured for e-ecommerce, selling products, and new productivity`,
 };
+
+interface SearchParams {
+  [key: string]: string | string[] | undefined;
+}
 
 const FeaturedPage = async ({
   searchParams,
 }: {
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  };
+  searchParams: SearchParams;
 }) => {
   const data = await getFeaturedProducts();
 
@@ -37,4 +39,4 @@ const FeaturedPage = async ({
   );
 };
 
-export default FeaturedPage;
+export default FeaturedPage;git add "app/(routes)/featured/page.tsx"
