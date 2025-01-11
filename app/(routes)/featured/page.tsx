@@ -39,4 +39,4 @@ const FeaturedPage = async ({
   );
 };
 
-export default FeaturedPage;git add "app/(routes)/featured/page.tsx"
+export default FeaturedPage;
